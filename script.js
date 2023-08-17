@@ -48,4 +48,11 @@ function setTile(){
 
     board[r][c] = currentPlayer;
     this.innerText = currentPlayer
+
+    if(currentPlayer == playerO){
+        currentPlayer = playerX;
+    }
+    else{
+        currentPlayer = playerO;
+    }
 }
