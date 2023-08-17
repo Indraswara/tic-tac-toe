@@ -3,8 +3,8 @@ var playerO = "O";
 var playerX = "X"; 
 
 
-var currentPlayer = playerO; 
-var gameOver = false; 
+var currentPlayer = playerO;
+var gameOver = false 
 
 window.onload = function(){
     setGame();
@@ -30,7 +30,22 @@ function setGame(){
             if(c == 0 || c == 1){
                 tile.classList.add("vertical-line");
             }
+            tile.addEventListener("click", setTile)
+            document.getElementById("board").append(tile);
         }
     }
 
+}
+
+function setTile(){
+    if(gameOver) {
+        return; 
+    }
+
+    let coords = this.id.split("-")
+    let r = parseInt(coords[0]);
+    let c = parseInt(coords[1]);
+
+    board[r][c] = currentPlayer;
+    this.innerText = currentPlayer
 }
