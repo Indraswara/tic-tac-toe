@@ -32,6 +32,11 @@ hr{
     align-items: center;
 }
 
+.winner{
+    background-color: lightgray; 
+    color: red; 
+}
+
 .horizontal-line{
     border-bottom: 3px solid black;
 
@@ -41,7 +46,3 @@ hr{
     border-right: 3px solid black;
 }
 
-.winner{
-    background-color: lightgray; 
-    color: red; 
-}
