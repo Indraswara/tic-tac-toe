@@ -42,6 +42,10 @@ function setTile(){
         return; 
     }
 
+    if (board[r][c] != ' '){
+        return;
+    } 
+
     let coords = this.id.split("-")
     let r = parseInt(coords[0]);
     let c = parseInt(coords[1]);
