@@ -42,9 +42,6 @@ function setTile(){
         return; 
     }
 
-   
- 
-
     let coords = this.id.split("-")
     let r = parseInt(coords[0]);
     let c = parseInt(coords[1]);
@@ -63,10 +60,6 @@ function setTile(){
     else{
         currentPlayer = playerO;
     }
-
-   
-    
-
     checkWinner()
 }
 
@@ -119,3 +112,36 @@ function checkWinner(){
         return;
     }
 }
+
+//reset button 
+
+let resetButton = document.getElementById("reset-button");
+
+
+function resetGame(){
+    const boardContainer = document.getElementById("board");
+    const tiles = boardContainer.querySelectorAll(".tile");
+    const winner = boardContainer.querySelectorAll(".winner");
+
+    winner.forEach(tile => {
+        tile.classList.remove("winner"); // Remove any additional classes
+    })
+    
+    // Clear the content of existing div elements
+    tiles.forEach(tile => {
+        tile.textContent = ''; // Clear the text content
+        tile.classList.remove("tile-selected"); // Remove any additional classes
+    });
+
+    board = [
+        [' ', ' ', ' '],
+        [' ', ' ', ' '],
+        [' ', ' ', ' ']
+    ];
+
+    gameOver = false; 
+    return;
+
+
+}
+resetButton.addEventListener("click", resetGame);
